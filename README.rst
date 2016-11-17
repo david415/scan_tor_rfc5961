@@ -24,7 +24,7 @@ To make this scan reproducible I have downloaded a consensus file from collector
 
 Massage into the format our scanner expects, (host port)::
 
-  cat 2016-11-16-04-00-00-consensus | grep '^r '| awk '{print $7" "$8}' > probe_consensus
+  cat 2016-11-16-04-00-00-consensus | grep '^r '| awk '{print $7" "$8}' > probe-consensus
 
 
 prepare scanner host iptables
