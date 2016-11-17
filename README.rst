@@ -41,7 +41,7 @@ run the scanner
 
 run::
 
-  ./rfc5961_probe.py < probe-consensus > probe.output
+  ./scan_tor_rfc5961.py < probe-consensus > probe.output
 
 The code is rather unpolished; currently the scanner tool writes comma seperated output.
 However connection timeouts are not in CSV formation... So you'll have to filter that
