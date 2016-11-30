@@ -16,15 +16,9 @@ each machine only has one of them.
 extract connecting information from a Tor consensus
 ```````````````````````````````````````````````````
 
-Firstly download a tor consensus.
-To make this scan reproducible I have downloaded a consensus file from collector::
+Firstly download a Tor consensus (from e.g. Collector) and format it into ``host port\n`` for the scanner::
 
-  wget https://collector.torproject.org/recent/relay-descriptors/consensuses/2016-11-16-04-00-00-consensus
-
-
-Massage into the format our scanner expects, (host port)::
-
-  cat 2016-11-16-04-00-00-consensus | grep '^r '| awk '{print $7" "$8}' > probe-consensus
+  curl https://collector.torproject.org/recent/relay-descriptors/consensuses/`date -u +'%Y-%m-%d-%H-00-00-consensus'` | grep '^r '| awk '{print $7" "$8}' > probe-consensus
 
 
 prepare scanner host iptables
